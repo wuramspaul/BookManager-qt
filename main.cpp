@@ -1,11 +1,11 @@
-#include "bookmanager.h"
+#include "paperzerber.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    BookManager w;
+    PaperZerber w;
     w.show();
     return a.exec();
 }
