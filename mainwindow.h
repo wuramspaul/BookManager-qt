@@ -6,11 +6,21 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonDocument>
-#include <QtZlib/zlib.h>
-#include "./include/JlCompress.h"
+#include <QProcess>
+#include <QList>
+#include <QMessageBox>
+
+#include <iostream>
+#include <fstream>
 
 #include "papercerberus.h"
 #include "bookmodel.h"
+#include "ZipArchive.h"
+#include "ZipFile.h"
+#include "newitemdialog.h"
+#include "editdialog.h"
+#include "saveinfo.h"
+#include "ui_saveinfo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,16 +53,28 @@ private slots:
 
     void on_open_triggered();
 
-    void on_add_triggered();
+    void on_openBook_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
     PaperCerberus* pc;
     BookModel* model;
-
+    QString path;
+    int correctitem;
+    void updateBookWidget();
+    QList<QString> searchlabel;
+    void searh2(QList<QString> list);
 
     // QWidget interface
 protected:
-    void resizeEvent(QResizeEvent *event);
+//    void resizeEvent(QResizeEvent *event);
 };
 #endif // MAINWINDOW_H

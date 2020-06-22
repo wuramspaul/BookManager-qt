@@ -23,9 +23,14 @@ private slots:
     void on_closeButton_clicked();
     void on_addButton_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_deletelabel_clicked();
+
 private:
     Ui::NewItemDialog *ui;
     QList<PaperCerberus::bookItem>* list;
+    QList<QString> templabel;
 };
 
 #endif // NEWITEMDIALOG_H

@@ -16,9 +16,12 @@ public:
         QString name;
         QString autor;
         QString discriptionText;
-        QImage bookImage;
         QColor bookColor;
+        QColor backraudcolar;
+        QColor frontcolor;
         QString sha256;
+
+        QList<QString> label;
         bookItem();
     };
 
@@ -28,6 +31,9 @@ public:
     PaperCerberus();
     void newBookItemWidget(QWidget*);
     static void printBooks(QList<bookItem>*);
+    static void printbook(bookItem item);
+
+
 };
 
 #endif // PAPERCERBERUS_H

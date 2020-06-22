@@ -6,20 +6,56 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>576</height>
+    <width>1163</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PaperCerberus</string>
+  </property>
+  <property name="toolTipDuration">
+   <number>4</number>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="animated">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2,1">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>1</number>
+    </property>
+    <property name="bottomMargin">
+     <number>1</number>
+    </property>
     <item>
      <widget class="QWidget" name="searchWidget" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="sizeConstraint">
         <enum>QLayout::SetMinimumSize</enum>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item>
         <widget class="QWidget" name="widget" native="true">
@@ -32,7 +68,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="labeledit"/>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton">
@@ -41,33 +77,10 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox">
-         <property name="title">
-          <string>Дополнительные параметры</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QCheckBox" name="checkBox_2">
+           <widget class="QPushButton" name="pushButton_5">
             <property name="text">
-             <string>Поиск по названию</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkBox_3">
-            <property name="text">
-             <string>Поиск по описанию</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkBox">
-            <property name="text">
-             <string>Поиск по авторам</string>
+             <string>Удалить</string>
             </property>
            </widget>
           </item>
@@ -75,7 +88,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QListWidget" name="listWidget"/>
+        <widget class="QListWidget" name="labellist"/>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
@@ -95,11 +108,51 @@
      </widget>
     </item>
     <item>
-     <widget class="QTableView" name="booksWidgets"/>
+     <widget class="QTableView" name="booksWidgets">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="autoScrollMargin">
+       <number>0</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>500</number>
+      </attribute>
+     </widget>
     </item>
     <item>
      <widget class="QWidget" name="discriptionWidget" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="4,2,1,1">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="4,2,1,1,1">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGraphicsView" name="discriptionImage"/>
        </item>
@@ -116,6 +169,13 @@
          </property>
          <property name="wordWrap">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>Редактировать информацию</string>
          </property>
         </widget>
        </item>
@@ -143,7 +203,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>1163</width>
      <height>21</height>
     </rect>
    </property>
@@ -151,7 +211,7 @@
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="create"/>
     <addaction name="open"/>
     <addaction name="separator"/>
     <addaction name="addFile"/>
@@ -175,28 +235,28 @@
     <property name="title">
      <string>Помощь</string>
     </property>
+    <addaction name="help"/>
     <addaction name="action_15"/>
-   </widget>
-   <widget class="QMenu" name="menufacking_test">
-    <property name="title">
-     <string>facking_test_lib</string>
-    </property>
-    <addaction name="add"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
    <addaction name="menu_3"/>
-   <addaction name="menufacking_test"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="create">
    <property name="text">
     <string>Создать архив</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="open">
    <property name="text">
     <string>Открыть архив</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
    </property>
   </action>
   <action name="addFile">
@@ -204,27 +264,39 @@
     <string>Добавить файл</string>
    </property>
    <property name="shortcut">
-    <string>F1</string>
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="action_5">
    <property name="text">
     <string>Убрать файл</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
   </action>
   <action name="save">
    <property name="text">
     <string>Сохранить архив</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="action_9">
    <property name="text">
     <string>Настройки</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
   </action>
   <action name="action_11">
    <property name="text">
     <string>Закрыть архив</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
   <action name="exit">
@@ -239,13 +311,16 @@
    <property name="text">
     <string>Быстрый поиск</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
   </action>
   <action name="showSearchPanel">
    <property name="text">
     <string>Расширенный поиск</string>
    </property>
    <property name="shortcut">
-    <string>F2</string>
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
   <action name="action_15">
@@ -264,6 +339,14 @@
   <action name="add">
    <property name="text">
     <string>facking open</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
    </property>
   </action>
  </widget>

@@ -25,11 +25,12 @@ int BookModel::columnCount(const QModelIndex &parent) const
 QVariant BookModel::data(const QModelIndex &index, int role) const
 {
     PaperCerberus::bookItem book = booklist->at(index.row());
+
     switch (role) {
     case Qt::DisplayRole:
         switch (index.column()) {
         case 0:
-            return QVariant();
+            return QVariant(booklist->count() - index.row());
         case 1:
             return QVariant(book.name);
         case 2:
@@ -39,21 +40,34 @@ QVariant BookModel::data(const QModelIndex &index, int role) const
         }
         break;
     case Qt::BackgroundRole:
-
         switch (index.column()) {
         case 0:
-            return QBrush(book.bookColor);
+        case 1:
+        case 2:
+            return QColor(book.backraudcolar);
         default:
             return QVariant();
         }
         break;
-//    case Qt::SizeHintRole:
-//        switch (index.column()) {
-//        case 0:
-//            return QSize(64,64);
-//        default:
-//            return QVariant();
-//        }
+
+   case Qt::ForegroundRole:
+        switch (index.column()) {
+        case 0:
+        case 1:
+        case 2:
+            return QBrush(book.frontcolor);
+        default:
+            return QVariant();
+        }
+        break;
+
+    case Qt::DecorationRole:
+         switch (index.column()) {
+         case 0:
+             return QColor(book.bookColor);
+         default:
+             return QVariant();
+         }
         break;
     case Qt::ToolTipRole:
         switch (index.column()) {
@@ -76,7 +90,7 @@ QVariant BookModel::headerData(int section, Qt::Orientation orientation, int rol
       switch (section)
       {
       case 0:
-        return tr("H");
+        return tr("#");
       case 1:
         return tr("Имя");
       case 2:

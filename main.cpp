@@ -2,6 +2,9 @@
 #include "papercerberus.h"
 #include <QApplication>
 
+//#include "./include/ZipLib/ZipArchive.h"
+//#include "./include/ZipLib/ZipFile.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
